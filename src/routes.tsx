@@ -29,7 +29,17 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'reports',
-                Component: lazy(() => import('./components/Dashboard') ),
+                children : [
+                    {
+                        path: 'documents',
+                        children: [
+                             {
+                                path: '1',
+                                Component: lazy(() => import('./components/Dashboard') ),
+                            },
+                        ]
+                    },
+                ]
             }
         ],
     },
