@@ -68,7 +68,6 @@ const SideMenus = (props: any) => {
                             </Transition.Root>
                         </>
                     }
-                
                 </li>
             ))}
         </ul>;

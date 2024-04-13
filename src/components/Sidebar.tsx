@@ -39,6 +39,7 @@ const Sidebar = (props: any) => {
     const matches = useMatches();
 
     const handleHover = (val: boolean) => {
+        console.log("checked hover")
         setShowLabel(val);
     }
 
@@ -116,7 +117,7 @@ const Sidebar = (props: any) => {
                                     alt="Your Company"
                                 />
                             </div>
-                            <nav className="flex flex-1 flex-col px-4">
+                            <nav className={`flex flex-1 flex-col ${showLabel ? ' overflow-y-auto' : ''}`}>
                                 <SideMenus 
                                     navigationMenus={navigation}
                                     showLabel={props.sidebarOpen ? true : showLabel}
@@ -142,7 +143,7 @@ const Sidebar = (props: any) => {
                 alt="Your Company"
             />
         </div>
-        <nav className="mt-8 px-4 flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+        <nav className={`mt-8 px-4 flex flex-1 flex-col ${showLabel ? ' overflow-y-auto overflow-x-hidden' : 'overflow-hidden'}`}>
             <SideMenus 
                 navigationMenus={navigation}
                 showLabel={showLabel}
